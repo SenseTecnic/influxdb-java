@@ -267,7 +267,11 @@ public class Point {
 				String stringValue = (String) value;
 				sb.append("\"").append(FIELD_ESCAPER.escape(stringValue)).append("\"");
 			} else if (value instanceof Number) {
-				sb.append(numberFormat.format(value));
+				if (value instanceof Long || value instanceof Integer) {
+					sb.append(value.toString()+"i");
+				} else {
+					sb.append(numberFormat.format(value));
+				}
 			} else {
 				sb.append(value);
 			}
