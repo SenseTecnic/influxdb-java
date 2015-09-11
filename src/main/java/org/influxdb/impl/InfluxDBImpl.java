@@ -17,6 +17,7 @@ import retrofit.RestAdapter;
 import retrofit.client.Header;
 import retrofit.client.OkClient;
 import retrofit.client.Response;
+import retrofit.converter.JacksonConverter;
 import retrofit.mime.TypedString;
 
 import com.google.common.base.Preconditions;
@@ -59,6 +60,7 @@ public class InfluxDBImpl implements InfluxDB {
 		OkHttpClient okHttpClient = new OkHttpClient();
 		this.restAdapter = new RestAdapter.Builder()
 				.setEndpoint(url)
+				.setConverter(new JacksonConverter())
 				.setErrorHandler(new InfluxDBErrorHandler())
 				.setClient(new OkClient(okHttpClient))
 				.build();

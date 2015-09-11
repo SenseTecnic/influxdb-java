@@ -99,6 +99,11 @@
 			<artifactId>retrofit</artifactId>
 			<version>1.9.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.squareup.retrofit</groupId>
+			<artifactId>converter-jackson</artifactId>
+			<version>1.9.0</version>
+		</dependency>
 		<!-- If we use okhttp instead of java urlconnection we achieve server failover 
 			of the influxdb server address resolves to all influxdb server ips. -->
 		<dependency>
